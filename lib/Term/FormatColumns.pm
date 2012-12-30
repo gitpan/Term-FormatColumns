@@ -1,12 +1,12 @@
 package Term::FormatColumns;
 {
-  $Term::FormatColumns::VERSION = '0.001';
+  $Term::FormatColumns::VERSION = '0.002';
 }
 
 use Sub::Exporter -setup => [
-    exports => [
-        'format_list',
-    ],
+    exports => (
+        'format_columns', 'format_columns_for_fh'
+    ),
 ];
 
 use Term::ReadKey qw( GetTerminalSize );
@@ -14,11 +14,11 @@ use List::Util qw( max );
 use List::MoreUtils qw( part each_arrayref );
 use POSIX qw( ceil );
 
-sub format_list(@) {
-    return format_to_fh( \*STDOUT, @_ );
+sub format_columns(@) {
+    return format_columns_for_fh \*STDOUT, @_;
 }
 
-sub format_to_fh {
+sub format_columns_for_fh($@) {
     my ( $fh, @data ) = @_;
  
     # If we're not attached to a terminal, one column, seperated by newlines
@@ -56,9 +56,9 @@ Term::FormatColumns - Format lists of data into columns across the terminal's wi
 
 =head1 SYNOPSIS
 
-    use Term::FormatColumns qw( format_list );
+    use Term::FormatColumns qw( format_columns );
     my @list = 0..1000;
-    print format_list @list;
+    print format_columns @list;
 
 =head1 DESCRIPTION
 
@@ -70,9 +70,15 @@ If the filehandle is not attached to a tty, will simply write one column of outp
 
 =head1 FUNCTIONS
 
-=head2 format_list
+=head2 format_columns
+
+    my $string = format_columns @array;
 
 Format the list of data. Returns a single string formatted and ready for output.
+
+=head2 format_columns_for_fh
+
+    my $string = format_columns_for_fh $fh, @array;
 
 =head1 COPYRIGHT
 
