@@ -1,6 +1,6 @@
 package Term::FormatColumns;
 {
-  $Term::FormatColumns::VERSION = '0.003';
+  $Term::FormatColumns::VERSION = '0.004';
 }
 
 use Sub::Exporter -setup => [
@@ -13,13 +13,15 @@ use Term::ReadKey qw( GetTerminalSize );
 use List::Util qw( max );
 use List::MoreUtils qw( part each_arrayref );
 use POSIX qw( ceil );
+use Symbol qw(qualify_to_ref);
 
 sub format_columns(@) {
-    return format_columns_for_fh( \*STDOUT, @_ );
+    return format_columns_for_fh STDOUT, @_;
 }
 
-sub format_columns_for_fh($@) {
-    my ( $fh, @data ) = @_;
+sub format_columns_for_fh(*@) {
+    my $fh = qualify_to_ref( shift, caller );
+    my @data = @_;
  
     # If we're not attached to a terminal, one column, seperated by newlines
     if ( !-t $fh ) {
@@ -79,11 +81,15 @@ If the filehandle is not attached to a tty, will simply write one column of outp
 
     my $string = format_columns @array;
 
-Format the list of data. Returns a single string formatted and ready for output.
+Format the list of data for STDOUT. Returns a single string formatted and ready for output.
 
 =head2 format_columns_for_fh
 
     my $string = format_columns_for_fh $fh, @array;
+    my $string = format_columns_for_fh STDOUT, @array;
+
+Format the given data for the given filehandle. If the filehandle is attached to a tty,
+will get the tty's width to determine how to format the data.
 
 =head2 format_columns_for_width
 

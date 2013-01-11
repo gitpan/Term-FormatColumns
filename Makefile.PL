@@ -28,7 +28,7 @@ my %WriteMakefileArgs = (
     "Sub::Exporter" => "0.984",
     "Term::ReadKey" => "2.30"
   },
-  "VERSION" => "0.003",
+  "VERSION" => "0.004",
   "test" => {
     "TESTS" => "t/*.t"
   }
