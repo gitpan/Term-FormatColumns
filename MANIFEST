@@ -6,3 +6,5 @@ Makefile.PL
 README.mkdn
 dist.ini
 lib/Term/FormatColumns.pm
+t/00_compile.t
+t/format.t

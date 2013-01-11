@@ -7,7 +7,8 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.3601"
+    "Module::Build" => "0.3601",
+    "Test::Compile" => 0
   },
   "configure_requires" => {
     "ExtUtils::MakeMaker" => "6.30",
@@ -18,7 +19,7 @@ my %module_build_args = (
     "Doug Bell <preaction\@cpan.org>"
   ],
   "dist_name" => "Term-FormatColumns",
-  "dist_version" => "0.002",
+  "dist_version" => "0.003",
   "license" => "perl",
   "module_name" => "Term::FormatColumns",
   "recommends" => {},

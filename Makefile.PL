@@ -12,7 +12,8 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "Format lists of data into columns across the terminal's width",
   "AUTHOR" => "Doug Bell <preaction\@cpan.org>",
   "BUILD_REQUIRES" => {
-    "Module::Build" => "0.3601"
+    "Module::Build" => "0.3601",
+    "Test::Compile" => 0
   },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30",
@@ -27,9 +28,9 @@ my %WriteMakefileArgs = (
     "Sub::Exporter" => "0.984",
     "Term::ReadKey" => "2.30"
   },
-  "VERSION" => "0.002",
+  "VERSION" => "0.003",
   "test" => {
-    "TESTS" => ""
+    "TESTS" => "t/*.t"
   }
 );
 
