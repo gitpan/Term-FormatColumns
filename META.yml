@@ -9,7 +9,7 @@ configure_requires:
   ExtUtils::MakeMaker: 6.30
   Module::Build: 0.3601
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -19,4 +19,8 @@ requires:
   List::MoreUtils: 0.33
   Sub::Exporter: 0.984
   Term::ReadKey: 2.30
-version: 0.004
+resources:
+  bugtracker: https://github.com/preaction/Term-FormatColumns/issues
+  homepage: https://github.com/preaction/Term-FormatColumns
+  repository: https://github.com/preaction/Term-FormatColumns.git
+version: 0.005

@@ -1,0 +1,33 @@
+==================================================
+Changes from 2013-04-08 00:00:00 +0000 to present.
+==================================================
+
+------------------------------------------
+version 0.005 at 2014-04-08 03:16:31 +0000
+------------------------------------------
+
+  Change: c5b5a9de65a1d189f61c7a84c744b108fbcc72e5
+  Author: Doug Bell <madcityzen@gmail.com>
+  Date : 2014-04-07 22:08:58 +0000
+
+    fix name resolution issue with sub
+
+    Because we tried to call the sub without parens before we declared
+    the prototype, Perl assumed that we were using the indirect object
+    syntax. Adding parens forces Perl to believe otherwise. 
+
+  Change: 445f6646207962c74eaed20c959557e945045cf8
+  Author: Doug Bell <madcityzen@gmail.com>
+  Date : 2014-04-07 22:08:27 +0000
+
+    add build artifacts from dist.ini, for easier contributions 
+
+  Change: 81e3c1e15c9e14698d3618ea213630c9721942be
+  Author: Doug Bell <madcityzen@gmail.com>
+  Date : 2014-04-07 22:07:43 +0000
+
+    update to my standard dist.ini 
+
+================================================
+Plus 4 releases after 2013-04-08 00:00:00 +0000.
+================================================
