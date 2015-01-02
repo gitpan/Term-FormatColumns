@@ -3,24 +3,33 @@ abstract: "Format lists of data into columns across the terminal's width"
 author:
   - 'Doug Bell <preaction@cpan.org>'
 build_requires:
-  Module::Build: 0.3601
-  Test::Compile: 0
+  Module::Build: '0.28'
+  Test::Compile: '0'
+  Test::More: '0.88'
 configure_requires:
-  ExtUtils::MakeMaker: 6.30
-  Module::Build: 0.3601
+  ExtUtils::MakeMaker: '0'
+  Module::Build: '0.28'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560'
+generated_by: 'Dist::Zilla version 5.023, CPAN::Meta::Converter version 2.142690'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: Term-FormatColumns
 requires:
-  List::MoreUtils: 0.33
-  Sub::Exporter: 0.984
-  Term::ReadKey: 2.30
+  List::MoreUtils: '0.33'
+  List::Util: '0'
+  POSIX: '0'
+  Sub::Exporter: '0.984'
+  Symbol: '0'
+  Term::ReadKey: '2.30'
+  strict: '0'
+  warnings: '0'
 resources:
   bugtracker: https://github.com/preaction/Term-FormatColumns/issues
   homepage: https://github.com/preaction/Term-FormatColumns
   repository: https://github.com/preaction/Term-FormatColumns.git
-version: 0.005
+version: '0.006'
+x_authority: cpan:PREACTION
+x_contributors:
+  - 'Marius Gavrilescu <marius@ieval.ro>'
